@@ -26,7 +26,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
         item.put("username", AttributeValue.builder().s(email).build());
         Map<String, AttributeValue> returned = dynamoDbClient.getItem(GetItemRequest.builder().tableName("csye6225").key(item).build()).item();
         long time = System.currentTimeMillis() / 1000L;
-        if (returned != null && Long.parseLong(returned.get("ttl").n()) > time) {
+        if (returned.get("ttl") != null && Long.parseLong(returned.get("ttl").n()) > time) {
             context.getLogger().log("Already send email to: " + email);
             timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
             context.getLogger().log("Invocation completed: " + timeStamp);
