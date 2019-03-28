@@ -5,12 +5,12 @@
 | Name | NEU ID | Email Address |
 | --- | --- | --- |
 | | | |
-| | | |
+| Meng Tan | 001856443 | tan.men@husky.neu.edu |
 | | | |
 | | | |
 
 ## Technology Stack
-
+JAVA8
 
 ## Build Instructions
 
