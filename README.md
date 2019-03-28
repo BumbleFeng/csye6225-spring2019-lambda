@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | | | |
 | Meng Tan | 001856443 | tan.men@husky.neu.edu |
-| | | |
+| Zhaojie Liu | 001210764 | liu.zhaoji@husky.neu.edu |
 | | | |
 
 ## Technology Stack
