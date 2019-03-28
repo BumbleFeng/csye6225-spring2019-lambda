@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d1732cb-c970-448d-b39b-5ad22fdfa153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LogEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appspec.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/aws/cloudformation/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/aws/codedeploy/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/aws/codedeploy/afterInstall.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/aws/scripts/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jmeter/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/.keep" beforeDir="false" />
-    </list>
+    <list default="true" id="9d1732cb-c970-448d-b39b-5ad22fdfa153" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -159,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553760947794" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553760959411" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -235,16 +225,15 @@
       <option name="presentableId" value="Default" />
       <updated>1553726085396</updated>
       <workItem from="1553726086654" duration="422000" />
-      <workItem from="1553727405930" duration="11771000" />
+      <workItem from="1553727405930" duration="12204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12193000" />
+    <option name="totallyTimeSpent" value="12626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="23" width="1390" height="822" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2537092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
