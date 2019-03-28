@@ -18,6 +18,6 @@ jobs:
       - run:
           name: Update Function Code
           command: |
-            cp ambda/build/distributions/lambda.zip .
+            cp lambda/build/distributions/lambda.zip .
             aws s3 cp lambda.zip s3://${BucketName}/lambda.zip
             aws lambda update-function-code --function-name "csye6225-lambda" --zip-file  fileb://lambda.zip
