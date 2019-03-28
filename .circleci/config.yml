@@ -2,41 +2,21 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/python:latest
     steps:
       - checkout
       - run:
+          name: Install packages
+          command: |
+            sudo apt-get update && sudo apt-get install wget zip unzip openjdk-8-jdk -y
+            sudo pip install awscli
+      - run:
           name: Build Artifact
           command: |
-            cd webapp
-            ./gradlew war
-            cd build/libs
-            ls -al
-            cd ../../..
+            cd lambda
+            ./gradlew buildZip
       - run:
-          name: Zip Artifact
+          name: Update Function Code
           command: |
-            echo "Hello the current build number is ${CIRCLE_BUILD_NUM}"
-            pwd
-            ls -al
-            mkdir -p codedeploy_artifact
-            cp infrastructure/aws/codedeploy/*.sh .
-            zip -r csye6225-web-app-${CIRCLE_BUILD_NUM}.zip webapp/build/libs/ROOT.war *.sh *.yml
-            ls -al
-            mv csye6225-web-app-${CIRCLE_BUILD_NUM}.zip codedeploy_artifact/
-            ls -al
-            pwd
-            cd codedeploy_artifact
-            ls -al
-            pwd
-            cd ..
-            pwd
-            ls -al
-      - run:
-          name: Upload Artifact to S3
-          command: |
-            echo "Hello"
-      - run:
-          name: Make CodeDeploy API call
-          command: |
-            echo "Hello CodeDeploy" 
+            cd build/distributions
+            aws lambda update-function-code --function-name "csye6225-lambda" --zip-file  fileb://lambda.zip
