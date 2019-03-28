@@ -14,9 +14,9 @@ jobs:
           name: Build Artifact
           command: |
             cd lambda
-            ./gradlew buildZip
+            ./gradlew build
       - run:
           name: Update Function Code
           command: |
-            cd build/distributions
+            cd lambda/build/distributions
             aws lambda update-function-code --function-name "csye6225-lambda" --zip-file  fileb://lambda.zip
