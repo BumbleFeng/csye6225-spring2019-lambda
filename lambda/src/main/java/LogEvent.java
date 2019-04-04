@@ -1,5 +1,7 @@
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -9,7 +11,11 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.ses.SesClient;
-import software.amazon.awssdk.services.ses.model.*;
+import software.amazon.awssdk.services.ses.model.Body;
+import software.amazon.awssdk.services.ses.model.Content;
+import software.amazon.awssdk.services.ses.model.Destination;
+import software.amazon.awssdk.services.ses.model.Message;
+import software.amazon.awssdk.services.ses.model.SendEmailRequest;
 
 public class LogEvent implements RequestHandler<SNSEvent, Object> {
     public Object handleRequest(SNSEvent request, Context context) {
@@ -23,7 +29,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
 
         DynamoDbClient dynamoDbClient = DynamoDbClient.create();
         HashMap<String, AttributeValue> item = new HashMap<>();
-        item.put("username", AttributeValue.builder().s(email).build());
+        item.put("email", AttributeValue.builder().s(email).build());
         Map<String, AttributeValue> returned = dynamoDbClient.getItem(GetItemRequest.builder().tableName("csye6225").key(item).build()).item();
         long time = System.currentTimeMillis() / 1000L;
         if (returned.get("ttl") != null && Long.parseLong(returned.get("ttl").n()) > time) {

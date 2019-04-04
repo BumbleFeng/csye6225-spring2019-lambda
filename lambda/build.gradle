@@ -25,7 +25,6 @@ dependencies {
             'com.amazonaws:aws-lambda-java-events:2.2.6',
             'software.amazon.awssdk:dynamodb:2.5.17',
             'software.amazon.awssdk:ses:2.5.17',
-            'software.amazon.awssdk:apache-client:2.5.17'
     )
 }
 
