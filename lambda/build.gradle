@@ -25,9 +25,8 @@ dependencies {
             'com.amazonaws:aws-lambda-java-events:2.2.6',
             'software.amazon.awssdk:dynamodb:2.5.17',
             'software.amazon.awssdk:ses:2.5.17',
+            'org.slf4j:slf4j-nop:1.7.26'
     )
-    testCompile 'org.slf4j:slf4j-nop:1.7.26'
-
 }
 
 task buildZip(type: Zip) {
