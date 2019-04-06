@@ -47,7 +47,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
         String domain = System.getenv("domain");
         String from = "no-reply@" + domain;
         String subject = "Reset Password";
-        String text = "http://" + domain + "/reset?email=" + email + "&token=" + token;
+        String text = "https://" + domain + "/reset?email=" + email + "&token=" + token;
         SesClient sesClient = SesClient.create();
         sesClient.sendEmail(SendEmailRequest.builder()
                 .destination(Destination.builder().toAddresses(email).build())
